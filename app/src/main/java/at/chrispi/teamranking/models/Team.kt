@@ -4,7 +4,7 @@ data class Team(
     val id: String,
     val teamName: String,
     val country: String,
-    val value: Int,
+    val teamValue: Int,
     val image: String,
     val europeanTitles: Int,
     val stadium: StadiumDetails,

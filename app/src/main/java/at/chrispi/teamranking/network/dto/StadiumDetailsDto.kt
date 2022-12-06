@@ -13,6 +13,6 @@ data class StadiumDetailsDto(
 ) {
     fun convert(): StadiumDetails = StadiumDetails(
         name = name ?: Constants.HAS_EMPTY_STRING_VALUE,
-        space = space ?: Constants.HAS_EMPTY_INT_VALUE
+        capacity = space ?: Constants.HAS_EMPTY_INT_VALUE
     )
 }

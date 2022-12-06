@@ -1,22 +1,24 @@
 package at.chrispi.teamranking.ui.team_list
 
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalLifecycleOwner
-import androidx.compose.ui.unit.dp
 import androidx.lifecycle.Lifecycle
+import androidx.navigation.NavController
+import at.chrispi.teamranking.models.Team
 import at.chrispi.teamranking.ui.composables.LoadingIndicator
+import at.chrispi.teamranking.ui.navigation.Routes
 import at.chrispi.teamranking.ui.team_list.composables.EmptyScreen
+import at.chrispi.teamranking.ui.team_list.composables.TeamListItem
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TeamListScreen(
-    viewModel: TeamListViewModel
+    viewModel: TeamListViewModel,
+//    onClick: (team: Team) -> Unit
+    navigation: NavController
 ) {
     val lifecycle: Lifecycle = LocalLifecycleOwner.current.lifecycle
 
@@ -25,19 +27,15 @@ fun TeamListScreen(
         viewModel.teamList.value.isEmpty() -> {
             EmptyScreen()
             viewModel.getTeams(lifecycle)
-
         }
         else -> {
             LazyColumn(
                 modifier = Modifier.fillMaxSize()
             ) {
                 items(viewModel.teamList.value) { team ->
-                    ListItem(
-                        modifier = Modifier.fillMaxWidth(),
-                        headlineText = { Text(team.teamName) },
-                        supportingText = { Text(team.country) },
-                        shadowElevation = 20.dp
-                    )
+                    TeamListItem(team = team) {
+                        navigation.navigate("${Routes.TeamScreen.route}/${team.id}")
+                    }
                 }
             }
         }

@@ -35,7 +35,7 @@ data class TeamDto(
         id = id ?: "No value",
         teamName = teamName ?: Constants.HAS_EMPTY_STRING_VALUE,
         country = country ?: Constants.HAS_EMPTY_STRING_VALUE,
-        value = value ?: Constants.HAS_EMPTY_INT_VALUE,
+        teamValue = value ?: Constants.HAS_EMPTY_INT_VALUE,
         image = image ?: Constants.HAS_EMPTY_STRING_VALUE,
         europeanTitles = europeanTitles ?: Constants.HAS_EMPTY_INT_VALUE,
         stadium = stadium?.convert() ?: StadiumDetails(

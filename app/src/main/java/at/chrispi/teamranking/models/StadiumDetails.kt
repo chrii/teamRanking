@@ -1,6 +1,6 @@
 package at.chrispi.teamranking.models
 
 data class StadiumDetails(
-    val space: Int,
+    val capacity: Int,
     val name: String
 )

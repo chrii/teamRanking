@@ -1,7 +1,18 @@
 <resources>
+    <!-- General -->
     <string name="app_name">Team Ranking</string>
     <string name="loading_indicator_default_text">Lade...</string>
+
     <!-- Team List Screen -->
     <!-- Empty Screen -->
     <string name="team_list_empty_text">Hier scheint nichts zu sein</string>
+    <string name="team_list_picture_description">Team Logo</string>
+
+    <!-- Team List Item -->
+    <string name="team_list_item_team_value">%s Millionen</string>
+
+    <!--Team Details Screen -->
+    <string name="team_details_alert_dialog_back_button">Zurück</string>
+    <string name="team_details_alert_dialog_title">Fehler</string>
+    <string name="team_details_alert_dialog_content">Das ausgewählte Team wurde nicht gefunden</string>
 </resources>
