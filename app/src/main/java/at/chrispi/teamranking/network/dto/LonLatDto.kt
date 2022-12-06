@@ -1,5 +1,6 @@
 package at.chrispi.teamranking.network.dto
 
+import at.chrispi.teamranking.misc.Constants
 import at.chrispi.teamranking.models.LatLng
 import com.squareup.moshi.Json
 
@@ -11,7 +12,7 @@ data class LonLatDto(
     val longitude: Double?
 ) {
     fun convert(): LatLng = LatLng(
-        longitude ?: 0.0,
-        latitude ?: 0.0
+        longitude ?: Constants.HAS_EMPTY_DOUBLE_VALUE,
+        latitude ?: Constants.HAS_EMPTY_DOUBLE_VALUE
     )
 }

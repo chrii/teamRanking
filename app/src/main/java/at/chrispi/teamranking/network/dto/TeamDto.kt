@@ -1,5 +1,6 @@
 package at.chrispi.teamranking.network.dto
 
+import at.chrispi.teamranking.misc.Constants
 import at.chrispi.teamranking.models.LatLng
 import at.chrispi.teamranking.models.StadiumDetails
 import at.chrispi.teamranking.models.Team
@@ -32,12 +33,18 @@ data class TeamDto(
 ) {
     fun convert(): Team = Team(
         id = id ?: "No value",
-        teamName = teamName ?: "No value",
-        country = country ?: "No value",
-        value = value ?: 0,
-        image = image ?: "No value",
-        europeanTitles = europeanTitles ?: 0,
-        stadium = stadium?.convert() ?: StadiumDetails(0, "No value"),
-        location = location?.convert() ?: LatLng(0.0, 0.0),
+        teamName = teamName ?: Constants.HAS_EMPTY_STRING_VALUE,
+        country = country ?: Constants.HAS_EMPTY_STRING_VALUE,
+        value = value ?: Constants.HAS_EMPTY_INT_VALUE,
+        image = image ?: Constants.HAS_EMPTY_STRING_VALUE,
+        europeanTitles = europeanTitles ?: Constants.HAS_EMPTY_INT_VALUE,
+        stadium = stadium?.convert() ?: StadiumDetails(
+            Constants.HAS_EMPTY_INT_VALUE,
+            Constants.HAS_EMPTY_STRING_VALUE
+        ),
+        location = location?.convert() ?: LatLng(
+            Constants.HAS_EMPTY_DOUBLE_VALUE,
+            Constants.HAS_EMPTY_DOUBLE_VALUE
+        ),
     )
 }

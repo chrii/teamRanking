@@ -8,6 +8,8 @@ import at.chrispi.teamranking.repositories.ITeamRepository
 class TeamRepository(
     private val teamService: TeamService
 ) : ITeamRepository {
+    var teams: List<Team> = listOf()
+
     override suspend fun getTeams(): DataState<List<Team>> {
         try {
             val response = teamService.getTeams()
@@ -18,12 +20,13 @@ class TeamRepository(
                 data = null
             ) else {
                 val teamEntity = response.body() ?: throw Exception("Response Body was null")
-                val teams = teamEntity.map { it.convert() }
+                val teamMap = teamEntity.map { it.convert() }
+                teams = teamMap
                 DataState(
                     hasData = true,
                     message = null,
                     code = response.code(),
-                    data = teams,
+                    data = teamMap,
                 )
             }
         } catch (e: Exception) {

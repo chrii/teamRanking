@@ -1,6 +1,6 @@
 package at.chrispi.teamranking.modules
 
-import at.chrispi.teamranking.NetworkConstants
+import at.chrispi.teamranking.Api
 import at.chrispi.teamranking.network.services.TeamService
 import dagger.Module
 import dagger.Provides
@@ -16,7 +16,7 @@ object NetworkModule {
     @Singleton
     @Provides
     fun provideTeamData(): TeamService = Retrofit.Builder()
-        .baseUrl(NetworkConstants.TEAMS_API)
+        .baseUrl(Api.TEAMS_API)
         .addConverterFactory(MoshiConverterFactory.create())
         .build()
         .create(TeamService::class.java)

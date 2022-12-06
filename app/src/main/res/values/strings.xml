@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Team Ranking</string>
+    <string name="loading_indicator_default_text">Lade...</string>
+    <!-- Team List Screen -->
+    <!-- Empty Screen -->
+    <string name="team_list_empty_text">Hier scheint nichts zu sein</string>
 </resources>

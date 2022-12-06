@@ -1,5 +1,6 @@
 package at.chrispi.teamranking.network.dto
 
+import at.chrispi.teamranking.misc.Constants
 import at.chrispi.teamranking.models.StadiumDetails
 import com.squareup.moshi.Json
 
@@ -11,7 +12,7 @@ data class StadiumDetailsDto(
     val name: String?
 ) {
     fun convert(): StadiumDetails = StadiumDetails(
-        name = name ?: "No value",
-        space = space ?: 0
+        name = name ?: Constants.HAS_EMPTY_STRING_VALUE,
+        space = space ?: Constants.HAS_EMPTY_INT_VALUE
     )
 }

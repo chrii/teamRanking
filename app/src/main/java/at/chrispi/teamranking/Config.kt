@@ -3,7 +3,7 @@ package at.chrispi.teamranking
 import androidx.compose.ui.graphics.Color
 
 
-object NetworkConstants {
+object Api {
     const val TEAMS_API: String = "https://public.allaboutapps.at/hiring/"
 }
 
