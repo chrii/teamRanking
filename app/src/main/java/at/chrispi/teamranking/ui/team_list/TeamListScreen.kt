@@ -8,7 +8,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.NavController
-import at.chrispi.teamranking.models.Team
 import at.chrispi.teamranking.ui.composables.LoadingIndicator
 import at.chrispi.teamranking.ui.navigation.Routes
 import at.chrispi.teamranking.ui.team_list.composables.EmptyScreen

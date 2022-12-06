@@ -32,7 +32,7 @@ fun TeamDetailsScreen(
                     Text(stringResource(R.string.team_details_alert_dialog_title))
                 },
                 text = {
-                    Text(stringResource(R.string.team_details_alert_dialog_content))
+                    Text(viewModel.errorMessage)
                 }
             )
         }

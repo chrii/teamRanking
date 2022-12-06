@@ -58,7 +58,7 @@ class MainActivity : ComponentActivity() {
                         ) { backStackEntry ->
                             val viewModel: TeamDetailsViewModel by viewModels()
                             val teamId: String? = backStackEntry.arguments?.getString("teamId")
-                            teamId?.let { viewModel.getTeam(it) }
+                            teamId?.let { viewModel.getTeam(it, baseContext) }
 
                             TeamDetailsScreen(
                                 viewModel = viewModel,

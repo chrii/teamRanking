@@ -1,6 +1,7 @@
 package at.chrispi.teamranking.repositories.implementations
 
 import android.util.Log
+import at.chrispi.teamranking.misc.Constants
 import at.chrispi.teamranking.models.Team
 import at.chrispi.teamranking.network.DataState
 import at.chrispi.teamranking.network.services.TeamService
@@ -13,9 +14,8 @@ class TeamRepository(
 
     override fun getTeam(id: String): DataState<Team> {
         return try {
-            Log.d("repository", teams.toString())
-            Log.d("repository", id)
-            val team = teams.find { id == it.id } ?: throw Exception("No value")
+            val team = teams.find { id == it.id }
+                ?: throw Exception(Constants.HAS_EMPTY_STRING_VALUE)
 
             DataState(
                 hasData = true,
